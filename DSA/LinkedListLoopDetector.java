@@ -29,6 +29,16 @@ public class LinkedListLoopDetector {
         return false; // No loop found
     }
 
+    private static boolean hasLoop(Node head){
+        while(head!=null&&head.next!=null){
+            Node fast = head.next.next;
+            Node slow = head.next;
+            if(fast==slow) return true;
+            else head=head.next;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         ListNode Node1 = new ListNode(1);
         Node1.next=new ListNode(2);
@@ -37,5 +47,31 @@ public class LinkedListLoopDetector {
         Node1.next.next.next.next=Node1.next.next.next;
         System.out.println(hasCycle(Node1));
 
+//        System.out.println(hasLoop(Node1));
+
+        Node noLoopNode = new Node(1);
+        noLoopNode.next = new Node(3);
+        noLoopNode.next.next = new Node(5);
+        noLoopNode.next.next.next = new Node(8);
+        printLinkedList(noLoopNode);
+
+        Node loopNode = new Node(1);
+        loopNode.next=new Node(2);
+        loopNode.next.next=new Node(3);
+        loopNode.next.next.next=new Node(4);
+        loopNode.next.next.next.next=loopNode.next.next.next;
+
+        System.out.println(hasLoop(noLoopNode));
+        System.out.println(hasLoop(loopNode));
+    }
+
+    public static void printLinkedList(Node head){
+        Node myHead = head;
+        while(myHead!=null) {
+            System.out.print(myHead.data);
+            if (null != myHead.next)  System.out.print( "->");
+            myHead = myHead.next;
+        }
+        System.out.println();
     }
 }
