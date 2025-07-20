@@ -47,4 +47,4 @@ public class butterfly {
 //********          i=4 SPACES=0 i=4
 //***  ***          i=3 SPACES=2 i=3
 //**    **          i=2 SPACES=4 i=2
-//*      *          i=3 SPACES=6 i=3
+//*      *          i=1 SPACES=6 i=1

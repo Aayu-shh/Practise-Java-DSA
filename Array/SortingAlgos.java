@@ -1,19 +1,23 @@
 package Array;
 
-import java.util.*;
-import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 public class SortingAlgos {
     public static void main(String[] args) {
         int[] arr1 = {7,8,3,1,2};
-        int[] sortedArr1 = bubbleSort(arr1);
-        printArray(sortedArr1);
-        int[] sortedArr2 = selectionSort(arr1);
-        printArray(sortedArr2);
-        int[] sortedArr3 = insertionSort(new int[]{5,3,4,1,2});
-        printArray(sortedArr3);
+        int[] bubbleSortedArr = bubbleSort(arr1);
+        printArray(bubbleSortedArr);
+        int[] selectionSortedArr = selectionSort(arr1);
+        printArray(selectionSortedArr);
+        int[] selectionSortedDescArr = selectionSortDesc(arr1);
+        printArray(selectionSortedDescArr);
+        int[] insertionSortedArray = insertionSort(new int[]{5,3,4,1,2});
+        printArray(insertionSortedArray);
+        int[] insertionSortedDescArray = insertionSortDesc(new int[]{5,3,4,1,2});
+        printArray(insertionSortedDescArray);
+
+        //Searching
+        int n = 4;
+        System.out.print("Number "+n+" found at index: "+binarySearch(insertionSortedArray,n)+" in ");
+        printArray(insertionSortedArray);
     }
     private static int[] bubbleSort(int[] intArr){
         for(int i=0;i<intArr.length-1;i++){         // i: 0 to len-1 -1 => 0 to len-2 => 2nd Last elem
@@ -42,6 +46,17 @@ public class SortingAlgos {
         return intArr;
     }
 
+    private static int[] selectionSortDesc(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            int maxIn = i;
+            for(int j=i+1;j< arr.length;j++){
+                maxIn=arr[j]>arr[i]?j:maxIn;
+            }
+            if(maxIn!=i) swap(arr,maxIn,i);
+        }
+        return arr;
+    }
+
     private static int[] insertionSort(int[] arr){
         for(int i=0;i<arr.length-1;i++){
             for(int j=i+1;j>0;j--){
@@ -52,6 +67,33 @@ public class SortingAlgos {
             }
         }
         return arr;
+    }
+
+    private static int[] insertionSortDesc(int[] arr){
+        for(int i = 0; i< arr.length-1;i++){
+            for(int j=i+1;j>0;j--){
+                if(arr[j]>arr[j-1]) swap(arr,i,j);
+            }
+        }
+        return arr;
+    }
+
+    private static int binarySearch(int[] arr, int elem) {
+        //asuming arr is asending order sorted
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (end > start) {
+            int mid = (start + end) / 2 +1;
+
+            if (arr[mid] == elem)
+                return mid;
+            else if (arr[mid] > elem) //bigger to smaller L->R
+                end = mid - 1;
+            else
+                start = mid + 1;
+        }
+        return -1;
     }
 
     // Utility Methods

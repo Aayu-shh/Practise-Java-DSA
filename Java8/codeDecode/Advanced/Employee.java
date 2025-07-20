@@ -14,6 +14,13 @@ public class Employee {
         this.name = name;
         this.citiesWorked = citiesWorked;
     }
+    public Employee(Integer id, String name, List<String> citiesWorked,Integer salary ) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.citiesWorked = citiesWorked;
+        this.salary = salary;
+    }
 //    public Employee(Integer id, String name, List<String> citiesWorked, String department) {
 //        super();
 //        this.id = id;

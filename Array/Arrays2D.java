@@ -10,22 +10,6 @@ public class Arrays2D {
         search();
     }
 
-    static void createUserMatrix() {
-        int[][] matrix = createMatrix();
-        //Printing the recieved array
-        printMatrix(matrix);
-
-    }
-
-    private static void printMatrix(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-
     static void search() {
         int[][] matrix = createMatrix();
         printMatrix(matrix);
@@ -67,4 +51,21 @@ public class Arrays2D {
         }
         return matrix1;
     }
+
+    static void createUserMatrix() {
+        int[][] matrix = createMatrix();
+        //Printing the recieved array
+        printMatrix(matrix);
+
+    }
+
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }

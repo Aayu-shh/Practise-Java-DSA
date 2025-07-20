@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Scanner;
 
-public class Arrays {
+public class Arrays101 {
     public static void main(String[] args) {
 //        arrays0();
         searchArray();
@@ -24,7 +24,7 @@ public class Arrays {
     }
 
     private static void arrays0() {
-        int[] myArray = getArray();
+        int[] myArray = getArrayFromUser();
 
         System.out.println("Array received is");
         for (int x : myArray)
@@ -33,7 +33,7 @@ public class Arrays {
 
     //Linear Search Algorithm
     private static void searchArray() {
-        int[] myArray = getArray();
+        int[] myArray = getArrayFromUser();
         System.out.print("Enter Number to search: ");
         int n = new Scanner(System.in).nextInt();
         boolean success = false;
@@ -49,7 +49,7 @@ public class Arrays {
     }
 
     //Method to get Array from user
-    private static int[] getArray() {
+    private static int[] getArrayFromUser() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Size of Array: ");
         int size = sc.nextInt();
