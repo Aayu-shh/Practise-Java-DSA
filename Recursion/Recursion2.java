@@ -33,7 +33,6 @@ public class Recursion2 {
             return x;
         if (x == 0)
             return 0;
-
         if (n % 2 == 0) {
             return calcPower2(x, n / 2) * calcPower2(x, n / 2);
         } else {

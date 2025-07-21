@@ -9,8 +9,8 @@ public class RecursionImp {
     static HashSet<String> uniqueSubseqSet = new HashSet<>();
     static String[] keypad = {".","abc","def","ghi","jkl","mno","pqrs","tu","vwx"};
     public static void main(String[] args) {
-        // int n = 3;
-        // towerOfHanoi(n, "Source", "Helper", "Destination");
+         int n = 3;
+         towerOfHanoi(n, "Source", "Helper", "Destination");
 
         // String s = "Ashu";
         // printStringReverse(s, s.length() - 1); // O(n) ~ n=> length of String4

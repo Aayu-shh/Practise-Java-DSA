@@ -58,6 +58,11 @@ public class Streams101 {
                 .collect(Collectors.toList());
 
         System.out.println(productNameList);
+
+        //Total Number(Quantity) of Products
+        System.out.println((Integer) productList.stream().mapToInt(Product::getQuantity).sum());
+        System.out.println(productList.stream().collect(Collectors.summingInt(Product::getQuantity)));
+
 //        System.out.println(productNameList.getClass());
         //To String
         System.out.println("String:");
