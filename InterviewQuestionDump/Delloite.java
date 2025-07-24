@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Delloite {
-    {
+    public static void main(String[] args) {
 //        List<Integer> myIntegers = Arrays.asList(2,3,7,1,5);
 //        System.out.println(myIntegers.stream().filter(i->i%2==0).toList());
 //        myIntegers.stream().sorted(Integer::compareTo).toList();
@@ -34,5 +34,10 @@ public class Delloite {
         System.out.println(a.equals(b));
         System.out.println(c.equals(d));
         System.out.println(e.equals(f));
+
+        final int[] arr ={2,4,1,6,3,7,9,5};
+        Arrays.stream(arr).boxed()
+                .sorted(Integer::compareTo)
+                .toList();
     }
 }
