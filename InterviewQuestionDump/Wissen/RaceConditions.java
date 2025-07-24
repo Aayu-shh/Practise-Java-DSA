@@ -15,13 +15,13 @@ public class RaceConditions {
         t1.join(); // To Ensure Control goes to main POST execution completion of t1
         t2.join(); // and of t2
         System.out.println("In the Thread: " + Thread.currentThread().getName());  //Main thread
-        System.out.println("Expected 2000, Actual is : "+counter.counter); // will return less than normal
+        System.out.println("Expected 2000, Actual is : "+counter.counter); // Fixed using synchronized over .increment() method
     }
 }
 
 class Counter{
     int counter=0;
-    void increment(){
+    synchronized void increment(){
         counter++;
     }
 }
