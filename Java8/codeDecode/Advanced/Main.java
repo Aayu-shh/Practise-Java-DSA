@@ -78,7 +78,7 @@ public class Main {
         Map<String,List<String>> myEmpByDept = empList.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.mapping(Employee::getName,toList())));
         System.out.println(myEmpByDept);
 
-        List<Integer> randomNumbers = Arrays.asList(new Integer[]{1,1,2,5,7,3,2,1,5,9,5,1,9,0,6,4,7,3});
+        List<Integer> randomNumbers = Arrays.asList(1,1,2,5,7,3,2,1,5,9,5,1,9,0,6,4,7,3);
         Map<Integer,Long> myMap= randomNumbers.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
         System.out.println(myMap);
         int maxKey = -1;
