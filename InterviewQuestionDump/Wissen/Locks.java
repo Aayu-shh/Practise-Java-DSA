@@ -15,7 +15,9 @@ public class Locks {
         ExecutorService exec = Executors.newFixedThreadPool(3);
 
         Runnable task = () ->{
+
           for(int i=0;i<1000;i++){
+              lock.lock();
               try {
                   counter++;
               }
@@ -29,7 +31,7 @@ public class Locks {
         exec.submit(task);
         exec.submit(task);
         exec.shutdown();
-        exec.awaitTermination(5, TimeUnit.SECONDS);
+//        exec.awaitTermination(5, TimeUnit.SECONDS);
         System.out.println("Final Counter value: "+counter);
 
     }
