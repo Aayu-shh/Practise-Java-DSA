@@ -7,7 +7,39 @@ public class Arrays2D {
         //2D Arrays = Matrix
         // space rows X columns X 4 bytes (for integer 2D array)
 //        createUserMatrix();
-        search();
+//        search();
+
+        //Q Rotate matrix by 90
+        int [][] arr = {{1,2,3},{4,5,6},{7,8,9}};
+        rotate90(arr);
+
+
+    }
+
+    private static void rotate90(int[][] arr) {
+        //Transpose
+        for(int i=0;i<arr.length;i++){
+            for (int j = i+1; j < arr[0].length; j++) {
+                int tmp = arr[i][j];
+                arr[i][j]=arr[j][i];
+                arr[j][i]=tmp;
+            }
+        }
+        printMatrix(arr);
+        // and Reverse
+        for(int i = 0;i< arr.length;i++){
+            int start = 0, end = arr[i].length-1;
+            //Rotating fist and last ...
+            while(start<end){
+                int tmp = arr[i][start];
+                arr[i][start] = arr[i][end];
+                arr[i][end] = tmp;
+                start++;
+                end--;
+            }
+        }
+
+        printMatrix(arr);
     }
 
     static void search() {
@@ -67,5 +99,26 @@ public class Arrays2D {
             System.out.println();
         }
     }
+
+    /*
+        INPUT:
+        int [][] arr = {{1,2,3},{4,5,6},{7,8,9}}
+
+        OUTPUT:
+        {{7,4,1},{8,5,2},{9,6,3}}
+
+        pattern
+        0,0 0,2
+        0,1 1,2
+        0,2 2,2
+
+        1,0 0,1
+        1,1 1,1
+        1,2 2,1
+
+        2,0 0,0
+        2,1 1,0
+        2,2 2,0
+         */
 
 }
