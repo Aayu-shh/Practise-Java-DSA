@@ -2,7 +2,8 @@ package Multithreading;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-
+//Problem:
+//Implement producer-consumer using BlockingQueue.
 public class ProducerConsumer {
     public static void main(String[] args) {
         BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(5);
